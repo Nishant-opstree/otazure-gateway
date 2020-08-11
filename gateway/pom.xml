@@ -207,10 +207,29 @@
 		</plugins>
 	</build>
 
-	<distributionManagement>
-	   <snapshotRepository>
-	      <id>local-nexus</id>
-	      <url>http://localhost:8081/repository/maven-snapshots</url>
-	   </snapshotRepository>
-	</distributionManagement>
+<repositories>
+<repository>
+  <id>test-frrd</id>
+  <url>https://pkgs.dev.azure.com/nishantprakashsaini285/gateway-pipeline/_packaging/test-frrd/maven/v1</url>
+  <releases>
+    <enabled>true</enabled>
+  </releases>
+  <snapshots>
+    <enabled>true</enabled>
+  </snapshots>
+</repository>
+</repositories>
+<distributionManagement>
+<repository>
+  <id>test-frrd</id>
+  <url>https://pkgs.dev.azure.com/nishantprakashsaini285/gateway-pipeline/_packaging/test-frrd/maven/v1</url>
+  <releases>
+    <enabled>true</enabled>
+  </releases>
+  <snapshots>
+    <enabled>true</enabled>
+  </snapshots>
+</repository>
+
+</distributionManagement>
 </project>
