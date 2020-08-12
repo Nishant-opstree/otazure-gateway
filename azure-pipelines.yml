@@ -14,6 +14,7 @@ stages:
         displayName: 'Maven Deploy artifact'
         inputs:
           mavenPomFile: 'gateway/pom.xml'
+          goals: 'deploy'
           publishJUnitResults: true
           testResultsFiles: '**/surefire-reports/TEST-*.xml'
           codeCoverageToolOption: 'JaCoCo'
