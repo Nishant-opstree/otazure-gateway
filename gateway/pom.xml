@@ -115,25 +115,6 @@
                 		<version>3.0.0-M1</version>
 			</plugin>
 
-			<plugin>
-				<groupId>org.sonatype.plugins</groupId>
-				<artifactId>nexus-staging-maven-plugin</artifactId>
-				<version>1.5.1</version>
-        			<executions>
-					<execution>
-	        				<id>default-deploy</id>
-	        				<phase>deploy</phase>
-	        				<goals>
-	        					<goal>deploy</goal>
-	        				</goals>
-	      				</execution>
-				</executions>
-				<configuration>
-          				<nexusUrl>http://localhost:8081</nexusUrl>
-          				<serverId>local-nexus</serverId>
-          				<repository>maven-snapshots</repository>
-        			</configuration>
-			</plugin>
 
 	   <plugin>
                 <groupId>org.jacoco</groupId>
