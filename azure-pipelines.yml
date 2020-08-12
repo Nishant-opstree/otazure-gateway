@@ -32,7 +32,7 @@ stages:
         displayName: 'Copy File to Artifact Staging Directory'
         inputs:
           SourceFolder: '$(system.defaultworkingdirectory)'
-          Contents: '**/*.jar'
+          Contents: '**/*gateway-service.jar'
           TargetFolder: '$(build.artifactstagingdirectory)'
 
       - task: PublishBuildArtifacts@1
