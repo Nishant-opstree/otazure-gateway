@@ -14,7 +14,7 @@ parameters:
   - macOS-10.14
 
 pool:
-  vmImage: $(parameters.image)
+  vmImage: ${{parameters.image}}
 
 
 
