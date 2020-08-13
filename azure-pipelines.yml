@@ -1,20 +1,8 @@
 trigger:
 - master
 
-parameters:
-  - name: image
-    displayName: Pool Image
-    type: string
-    default: ubuntu-latest
-    values:
-      - windows-latest
-      - ubuntu-latest
-      - ubuntu-16.04
-      - macOS-latest
-      - macOS-10.14
-
 pool:
-  vmImage: ${{parameters.image}}
+  vmImage: ubuntu-16.04
 
 
 
