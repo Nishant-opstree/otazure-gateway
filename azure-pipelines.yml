@@ -9,7 +9,6 @@ pool:
 stages:
 - template: azure-pipelines-1.yml
 - stage: Continuous_Integration
-  displayName: $(stage_name)
   jobs:
   - job: Build
     steps:
