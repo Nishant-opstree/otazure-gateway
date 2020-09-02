@@ -4,36 +4,31 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
-stages:
-- template: azure-pipelines-1.yml
-- stage: Continuous_Integration
-  jobs:
-  - job: Build
-    steps:
-      - task: Maven@3
-        inputs:
-          mavenPomFile: 'pom.xml'
-          publishJUnitResults: true
-          testResultsFiles: '**/surefire-reports/TEST-*.xml'
-          codeCoverageToolOption: 'JaCoCo'
-          javaHomeOption: 'JDKVersion'
-          jdkVersionOption: '1.8'
-          mavenVersionOption: 'Default'
-          mavenOptions: '-Xmx3072m'
-          mavenAuthenticateFeed: false
-          effectivePomSkip: false
-          sonarQubeRunAnalysis: false
-          checkStyleRunAnalysis: true
-          pmdRunAnalysis: true
+steps:
+  - task: Maven@3
+    inputs:
+      mavenPomFile: 'pom.xml'
+      publishJUnitResults: true
+      testResultsFiles: '**/surefire-reports/TEST-*.xml'
+      codeCoverageToolOption: 'JaCoCo'
+      javaHomeOption: 'JDKVersion'
+      jdkVersionOption: '1.8'
+      mavenVersionOption: 'Default'
+      mavenOptions: '-Xmx3072m'
+      mavenAuthenticateFeed: false
+      effectivePomSkip: false
+      sonarQubeRunAnalysis: false
+      checkStyleRunAnalysis: true
+      pmdRunAnalysis: true
 
-      - task: CopyFiles@2
-        inputs:
-          SourceFolder: '''$(system.defaultworkingdirectory)'''
-          Contents: '''**/*gateway-service.jar'''
-          TargetFolder: '''$(build.artifactstagingdirectory)'''
+  - task: CopyFiles@2
+    inputs:
+      SourceFolder: '''$(system.defaultworkingdirectory)'''
+      Contents: '''**/*gateway-service.jar'''
+      TargetFolder: '''$(build.artifactstagingdirectory)'''
 
-      - task: PublishBuildArtifacts@1
-        inputs:
-          PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-          ArtifactName: 'drop'
-          publishLocation: 'Container'
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+      ArtifactName: 'drop'
+      publishLocation: 'Container'
