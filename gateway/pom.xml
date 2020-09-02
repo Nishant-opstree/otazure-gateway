@@ -190,8 +190,8 @@
 
 <repositories>
 <repository>
-  <id>test-frrd</id>
-  <url>https://pkgs.dev.azure.com/nishantprakashsaini285/gateway-pipeline/_packaging/test-frrd/maven/v1</url>
+  <id>nishantprakash080</id>
+  <url>https://pkgs.dev.azure.com/nishantprakash080/_packaging/nishantprakash080/maven/v1</url>
   <releases>
     <enabled>true</enabled>
   </releases>
@@ -201,9 +201,9 @@
 </repository>
 </repositories>
 <distributionManagement>
-<repository>
-  <id>test-frrd</id>
-  <url>https://pkgs.dev.azure.com/nishantprakashsaini285/gateway-pipeline/_packaging/test-frrd/maven/v1</url>
+ <repository>
+  <id>nishantprakash080</id>
+  <url>https://pkgs.dev.azure.com/nishantprakash080/_packaging/nishantprakash080/maven/v1</url>
   <releases>
     <enabled>true</enabled>
   </releases>
