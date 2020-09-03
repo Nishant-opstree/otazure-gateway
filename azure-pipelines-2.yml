@@ -8,7 +8,7 @@ steps:
   - task: Maven@3
     inputs:
       mavenPomFile: 'gateway/pom.xml'
-      goals: 'deploy'
+      goals: 'package'
       publishJUnitResults: true
       testResultsFiles: '**/surefire-reports/TEST-*.xml'
       codeCoverageToolOption: 'JaCoCo'
